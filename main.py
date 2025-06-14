@@ -90,10 +90,11 @@ class WebCrawlerTests(unittest.TestCase):
     def test_search(self):
         crawler = WebCrawler()
         crawler.index["page1"] = "This has the keyword"
-        crawler.index["page2"] = "No keyword here"
+        crawler.index["page2"] = "No match here"
 
         results = crawler.search("keyword")
-        self.assertEqual(results, ["page2"])
+        self.assertEqual(results, ["page1"])
+
         
 
 
